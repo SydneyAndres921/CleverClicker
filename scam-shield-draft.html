@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scam Shield – Spot it. Stop it.</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fc;--card:#fff;--ink:#0f1b33;--mute:#4a5873;--pri:#2447f5;--on:#fff;--sun:#ffd23f;--bad:#c4271c;--badbg:#ffe9e6;--good:#0f7a50;--goodbg:#dff6ea;--hi:#fff1b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1327;--card:#16213b;--ink:#f1f5ff;--mute:#b3c0da;--pri:#8ea5ff;--on:#0b1327;--bad:#ff9a90;--badbg:#3a1a1c;--good:#7be3ab;--goodbg:#12352a;--hi:#4b4210}}
+:root[data-theme="dark"]{--bg:#0b1327;--card:#16213b;--ink:#f1f5ff;--mute:#b3c0da;--pri:#8ea5ff;--on:#0b1327;--bad:#ff9a90;--badbg:#3a1a1c;--good:#7be3ab;--goodbg:#12352a;--hi:#4b4210}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:21px/1.6 Lexend,Verdana,sans-serif}
+a{color:inherit}h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;font-weight:800;margin:0 0 12px}h2{font-size:1.5rem;margin:30px 0 12px}h3{margin:0 0 6px;font-size:1.1rem}p{margin:0 0 14px}.mute{color:var(--mute)}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:3px solid var(--ink);padding:10px 18px;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+.hin{max-width:960px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.logo{font-weight:800;text-decoration:none;font-size:1.2rem}
+nav{display:flex;gap:6px;flex-wrap:wrap}nav a{text-decoration:none;font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:99px;border:2px solid transparent}
+nav a.on{background:var(--ink);color:var(--bg)}
+main{max-width:960px;margin:auto;padding:26px 18px 80px}
+:focus-visible{outline:4px solid var(--pri);outline-offset:3px}
+.btn,.tools button{font:inherit;font-weight:600;font-size:.85rem;padding:12px 18px;border-radius:14px;border:3px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:4px 4px 0 var(--ink);text-decoration:none;display:inline-block;margin:0 10px 12px 0;text-align:left}
+.btn.p{background:var(--pri);color:var(--on)}.btn:active,.tools button:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.dev{background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--c,var(--pri));max-width:620px;overflow:hidden;margin:18px 0 22px;animation:in .6s cubic-bezier(.2,1.3,.4,1)}
+@keyframes in{from{transform:translateY(40px);opacity:0}}
+.bar{background:var(--ink);color:var(--bg);padding:10px 16px;font-size:.75rem;display:flex;gap:8px;align-items:center}
+.bar b{background:var(--sun);color:#0f1b33;border-radius:99px;padding:0 10px;margin-left:auto}
+.body{padding:18px 20px}.tools{padding:0 20px 8px;display:flex;flex-wrap:wrap}
+[data-a],[data-f]{cursor:pointer}
+.lnk{font:inherit;font-weight:700;background:#1a73e8;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;margin:6px 0 12px}
+.att{border:2px dashed var(--mute);border-radius:10px;padding:8px 14px;display:inline-block;margin-bottom:14px;font-size:.85rem}
+.sms{background:#e3e8f4;color:#0f1b33;border-radius:18px 18px 18px 4px;padding:14px 16px}.sms u{color:#1a55c8;font-weight:600}
+.pop{background:#b3141c;color:#fff;padding:20px;position:relative;text-align:center}.pop .x{position:absolute;top:8px;right:12px;font-weight:800;background:#fff3;border-radius:6px;padding:0 10px}.pop .tools{justify-content:center;padding:0}
+.pop .tools button{background:#ffd23f;color:#111;border-color:#111;box-shadow:3px 3px 0 #111}
+.call{background:linear-gradient(#1b2745,#101a31);color:#fff;padding:20px}.call .tools{padding:0}.call button{background:#fff;color:#111}
+.hit{background:var(--hi);outline:3px solid var(--sun);border-radius:6px}.insp [data-f]{outline:2px dashed var(--pri);outline-offset:2px}
+.why,.fb{border:3px solid var(--ink);border-radius:16px;padding:14px 18px;margin:0 0 16px;background:var(--card)}
+.why{border-color:var(--pri);min-height:3.4em}.fb.bad{background:var(--badbg);border-color:var(--bad)}.fb.good{background:var(--goodbg);border-color:var(--good)}
+.scroll{display:block;font:inherit;font-weight:800;color:var(--bad);background:none;border:0;margin:26px auto;font-size:1.3rem;cursor:pointer;animation:bob 1.4s ease-in-out 4}@keyframes bob{50%{transform:translateY(9px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:18px 0}
+.sc{display:block;text-decoration:none;background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:18px;box-shadow:6px 6px 0 var(--c)}
+.sc .ic{font-size:2.4rem;display:block}.sc small{display:block;color:var(--mute);font-size:.75rem;line-height:1.4}.sc:hover{transform:translate(-2px,-2px)}
+.chip{display:inline-block;background:var(--c);color:#fff;border-radius:99px;padding:2px 16px;font-size:.8rem;font-weight:600;margin-bottom:10px}
+.tip{display:flex;gap:12px;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:12px 16px;margin-bottom:10px}.tip b{color:var(--good)}
+.real{background:var(--goodbg);border:3px solid var(--good);border-radius:18px;padding:16px 20px}
+ol.steps{padding-left:26px}ol.steps li{margin-bottom:8px}
+.fine{font-size:.75rem;color:var(--mute);margin-top:40px;border-top:2px solid var(--line,#8884);padding-top:14px}
+</style></head><body>
+<header><div class="hin"><a class="logo" href="#/">🛡️ Scam Shield</a><nav><a href="#/" id="n-">Test</a><a href="#/play" id="n-play">Practice</a><a href="#/learn" id="n-learn">Learn</a></nav></div></header>
+<main id="app"></main>
+<script>
+const S=[
+{id:"email",ic:"📧",c:"#2447f5",name:"Phishing email",tag:"A 'company' email demands you act fast",
+html:`<div class="dev" style="--c:#2447f5"><div class="bar">📥 Inbox <b>1 new</b></div><div class="body"><h3>Action required: your account is limited</h3><p class="mute" style="font-size:.8rem"><span data-f="sender"><b>PayPal Service</b> &lt;support@paypa1-secure.com&gt;</span></p><p data-f="greet">Dear customer,</p><p data-f="urg">We noticed unusual activity. Your account will be <b>closed within 24 hours</b> unless you confirm your details.</p><span class="lnk" data-a="link" data-f="url">Restore my account</span><br><span class="att" data-a="att" data-f="att">📎 Invoice_4471.pdf.zip</span></div><div class="tools"><button data-a="rep">↩ Reply</button><button data-a="del">🗑 Delete</button><button data-a="rpt">🚩 Report phishing</button></div></div>`,
+flags:{sender:"Look closely: 'paypa1' ends with the number 1, not the letter L. Look-alike addresses are a favourite trick.",greet:"Real companies use your name. 'Dear customer' means the same email went to thousands of people.",urg:"Deadlines and threats are built to make you panic and skip thinking.",url:"Buttons hide the real destination. On a computer, hover to preview it; on a phone, press and hold. This one leads to a fake login page.",att:"You never ordered anything, and a .zip is a common way to hide harmful software."},
+acts:{link:[0,"That button leads to a fake login page that copies whatever you type. Real companies let you simply open their app or type their address yourself."],att:[0,"Opening unexpected attachments can install software that spies on you or locks your files."],rep:[0,"Replying tells the scammer your address is real and active, so expect more."],del:[1,"Safe choice! Even better: report it first so your email provider can block it for others."],rpt:[1,"Excellent! Reporting protects you and everyone else. You can then delete it."]},
+how:"Scammers copy a company's logo and tone, then send thousands of emails at once. A few people always click. The link opens a copy of the real login page. Whatever you type goes straight to the thief, who then logs in to your real account.",
+traps:[["Look-alike addresses","paypa1.com, amaz0n-support.net, or a long address that merely contains the real name. Check the part just before '.com'."],["Fear and deadlines","'Closed in 24 hours', 'unauthorized login', 'payment failed'. Real problems can wait until you check them yourself."],["Fake invoices","A surprise bill makes you click or call to dispute it. The call or link is the trap."],["Safe-looking attachments","Files ending in .zip, .exe or even PDFs from strangers can carry harmful software."]],
+real:"Real companies address you by name, never ask for your password by email, and are fine if you ignore the message and sign in using their app or by typing their website yourself.",
+tips:["Never tap links in unexpected messages. Open the app or type the website yourself.","Check the sender address, not just the display name.","Don't open attachments you didn't expect, even from people you know. Their account may be hacked.","Turn on two-step verification for email and banking.","When in doubt, forward it to a family member before acting."],
+after:["Change that account's password right away (and anywhere you reused it).","Call your bank if you typed card or bank details.","Run your computer's built-in security scan, and report the email."]},
+{id:"sms",ic:"💬",c:"#e0368a",name:"Text message scam",tag:"A text says your parcel or account has a problem",
+html:`<div class="dev" style="--c:#e0368a"><div class="bar">💬 Messages · <span data-f="num">+1 (347) 555-0188</span><b>now</b></div><div class="body"><div class="sms"><span data-f="urg">USPS: Your package is on hold.</span> <span data-f="exp">Pay a $1.99 redelivery fee today</span> or it will be returned: <u data-a="link" data-f="url">usps-redelivery-pay.top/id7</u></div></div><div class="tools"><button data-a="stop">Reply STOP</button><button data-a="call">📞 Call this number</button><button data-a="blk">🚫 Report junk &amp; block</button><button data-a="off">🔎 Check usps.com myself</button></div></div>`,
+flags:{num:"A random personal-looking number. Delivery companies use short codes or official lines.",urg:"Pretending to be a well-known brand, with a deadline, is the standard recipe.",exp:"A tiny fee is a hook: the real goal is to steal your card details.",url:"The address ends in .top, not usps.com. Official services use their own website."},
+acts:{link:[0,"The page would ask for your card number and 'fee', then use your details for real purchases."],stop:[0,"Replying, even STOP, confirms your number works. Don't reply to unknown senders."],call:[0,"Calling a number from a suspicious text can connect you to the scammers."],blk:[1,"Great! Reporting (forward to 7726) and blocking helps stop them."],off:[1,"Perfect. If there is really a parcel, the official site will show it, no link needed."]},
+how:"Criminals text millions of random numbers about deliveries, tolls, banks or prizes. The message looks small and routine, so people tap before thinking. The page behind the link collects your card, bank login or personal details.",
+traps:[["Small fees","$1.99 sounds harmless but gives them your full card details."],["Wrong-number openers","'Hi, is this Anna?' starts a chat that slowly leads to romance or investment scams."],["Bank alerts","A text claiming 'suspicious login' with a link. Banks don't send log-in links."],["Prizes and refunds","Winning something you never entered, or an unexpected refund."]],
+real:"Genuine companies don't text you links to pay small fees. If you are expecting a parcel, track it in the official app or website.",
+tips:["Don't tap links from unknown numbers, even if the logo looks real.","Don't reply, not even 'STOP'.","Forward scam texts to 7726 (SPAM), then block and delete.","Track parcels and bank issues by opening the official app yourself.","Never give codes sent to your phone to anyone who asks."],
+after:["Call your card company and ask to freeze or replace the card.","Change passwords for any account you typed in.","Watch statements for the next few weeks."]},
+{id:"popup",ic:"🖥️",c:"#f08a00",name:"Fake virus warning",tag:"A loud pop-up says your computer is infected",
+html:`<div class="dev" style="--c:#f08a00"><div class="bar"><span data-f="url">🔓 microsoft-support-alert.xyz</span></div><div class="pop"><span class="x" data-a="fx">✕</span><h3>⚠️ VIRUS DETECTED</h3><p data-f="lock">Your computer is LOCKED. Do not close this window or all files will be deleted!</p><p data-f="timer">Time left: <b>04:59</b></p><div class="tools"><button data-a="call" data-f="num">📞 Call 1-800-555-0199</button><button data-a="scan">Scan now</button></div></div><div class="tools" style="padding-top:14px"><button data-a="close">Close this tab (Ctrl+W)</button><button data-a="ask">Ask family for help</button></div></div>`,
+flags:{url:"The web address has nothing to do with Microsoft. It ends in .xyz.",lock:"Websites cannot lock your computer. It is only a web page trying to scare you.",timer:"A countdown is pressure, nothing more.",num:"Real warnings from Windows or Apple never include a phone number."},
+acts:{fx:[0,"The ✕ is part of the trick. Clicking it can open more pop-ups. Close the whole tab or browser instead."],call:[0,"You'd reach scammers who ask to 'fix' it by taking control of your computer, then charge you."],scan:[0,"The button can download real harmful software."],close:[1,"Correct! It is only a web page. If it won't close, restart the browser or turn the computer off and on."],ask:[1,"Smart. Asking someone you trust is always a good move. Neither of you should call that number."]},
+how:"A pop-up copies the look of a security alert, sometimes with a loud sound and a countdown. Calling the number leads to a 'technician' who asks to take over your computer, shows fake 'proof' of viruses, and charges for a pointless repair, or empties your accounts.",
+traps:[["Remote access","'Please install this so I can help.' It gives them full control of your files and bank logins."],["Fake refunds","'Overpaid' you by mistake and asks you to send money back."],["Cold calls","Real tech companies never phone you about viruses."],["Fake close buttons","The ✕ or 'Cancel' can do the opposite of what it says."]],
+real:"Genuine security software warnings appear from the program you installed, never in a web page, and never ask you to phone a stranger.",
+tips:["Never call numbers shown in pop-ups.","Close the browser or switch the computer off to escape.","Never let a caller control your computer.","Only trust software you installed yourself.","Keep a trusted tech helper's number near your computer."],
+after:["Turn off wifi right away.","Change passwords from a different, safe device.","Call your bank if you shared payment details and ask a trusted repair shop to check the machine."]},
+{id:"call",ic:"📞",c:"#7a3cf0",name:"Grandchild in trouble",tag:"A caller who sounds like family begs for money",
+html:`<div class="dev" style="--c:#7a3cf0"><div class="call"><p class="mute" style="color:#cdd6f0">Incoming call · <span data-f="num">Unknown number</span></p><p data-f="voice">"Grandma, it's me! I had a car accident and I'm in jail. Please <span data-f="sec">don't tell Mom and Dad</span>."</p><p data-f="pay">"I need $3,000 today. A man will come to collect it, or you can buy gift cards."</p><div class="tools"><button data-a="send">💸 Send the money</button><button data-a="stay">Stay on the line to hear more</button><button data-a="word">Ask for our family safe word</button><button data-a="hang">Hang up, call my grandchild's real number</button></div></div></div>`,
+flags:{num:"An unknown number. Scammers often say 'my phone broke' or 'I'm using a friend's'.",voice:"Voices can be copied by computers from short online clips. A familiar voice is not proof.",sec:"Secrecy stops you from checking. It is the biggest red flag.",pay:"Cash couriers, gift cards, wire transfers and crypto can't be traced or refunded."},
+acts:{send:[0,"Money sent this way is almost never recovered. Real emergencies can wait two minutes for a call-back."],stay:[0,"Scammers keep you talking so you cannot think or call anyone. Hang up and check."],word:[1,"Good thinking! If they can't answer, hang up and call the person on the number you already have."],hang:[1,"Exactly right. Hanging up feels rude, but it is the safest move. Then call your grandchild or a parent."]},
+how:"Scammers search social media for family names, then call pretending to be a grandchild in an emergency. A second voice may pose as a lawyer or police officer. They push urgency and secrecy so you act before talking to anyone.",
+traps:[["Cloned voices","Short clips from social media can be turned into a convincing copy."],["Secrecy","'Please don't tell Mom.' This keeps family from stopping the scam."],["Odd payments","Gift cards, couriers, wire transfers or crypto."],["Fake officials","A 'lawyer' or 'bail officer' takes over to add pressure."]],
+real:"Real lawyers, courts and police never demand gift cards or cash couriers, and a real grandchild will understand you calling back.",
+tips:["Agree on a family safe word and keep it private.","Hang up and call back on a number you already trust.","Never send gift cards or cash to a caller.","Talk to another family member before paying anything.","Tighten social media privacy to limit what scammers can learn."],
+after:["Call your bank immediately and ask about stopping the transfer.","Report it to the FTC and your local police.","Tell your family so they can warn others. Shame is the scammer's friend."]}
+];
+const $=q=>document.querySelector(q),app=$("#app"),by=id=>S.find(s=>s.id==id);
+let cur=S[0],ctx=null;
+const rnd=()=>{let n;do n=S[Math.floor(Math.random()*S.length)];while(n==cur&&S.length>1);return n};
+function route(){const h=location.hash.slice(2).split("/");ctx=null;window.scrollTo(0,0);
+document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.id=="n-"+h[0]));
+({"":home,play,learn})[h[0]]?.(h[1])||(h[0]&&!({play:1,learn:1})[h[0]]?home():0)}
+addEventListener("hashchange",route);
+function tipsHTML(s){return`<h2>${s.ic} How to stay safe</h2>`+s.tips.map(t=>`<div class="tip"><b>✔</b><span>${t}</span></div>`).join("")}
+function wire(){app.querySelectorAll("[data-a],[data-f]").forEach(x=>{x.tabIndex=0;x.setAttribute("role","button")})}
+app.addEventListener("keydown",e=>{if((e.key=="Enter"||e.key==" ")&&e.target.matches("[data-a],[data-f]")){e.preventDefault();e.target.click()}});
+app.addEventListener("click",e=>{const t=e.target.closest("[data-a],[data-f]");if(!t||!ctx||ctx.done)return;
+if(ctx.inspect){const f=t.dataset.f;if(!f)return;t.classList.add("hit");ctx.found.add(f);$("#why").innerHTML="🔎 <b>Clue:</b> "+ctx.s.flags[f];$("#cnt").textContent=`Clues found: ${ctx.found.size} of ${Object.keys(ctx.s.flags).length}`;return}
+if(t.dataset.a)act(t.dataset.a,t)});
+function act(a,el){const s=ctx.s,[ok,fb]=s.acts[a];ctx.done=true;const r=$("#res");
+const next=ctx.mode=="test"?`<a class="btn p" href="#/learn/${s.id}">Read the full guide</a><button class="btn" id="again">Try another test</button><a class="btn" href="#/play">Open Practice</a>`:(ok?`<a class="btn p" href="#/learn/${s.id}">Read the full guide</a><a class="btn" href="#/play">Pick another</a>`:`<button class="btn p" id="retry">Try again</button>`);
+if(ctx.mode=="test"&&!ok){r.innerHTML=`<div class="fb bad"><b>⚠️ This would have been a scam.</b><br>${fb}</div><button class="scroll" id="sc">Scroll for more information<br>▼</button><div id="more">${tipsHTML(s)}<h2>What the scammers hope you'll do</h2><p>${s.how}</p><p class="real"><b>Remember:</b> ${s.real}</p><p style="margin-top:24px">${next}</p></div>`;$("#sc").onclick=()=>$("#more").scrollIntoView()}
+else r.innerHTML=`<div class="fb ${ok?"good":"bad"}"><b>${ok?"✅ "+(ctx.mode=="test"?"Well done!":"Correct!"):"⚠️ Not safe."}</b><br>${fb}</div><p>${next}</p>`;
+if($("#again"))$("#again").onclick=()=>{cur=rnd();home()};if($("#retry"))$("#retry").onclick=()=>play(s.id);
+r.scrollIntoView({block:"nearest"});$("#res .btn,#sc")?.focus({preventScroll:true})}
+function home(){const s=cur;ctx={s,mode:"test",found:new Set()};
+app.innerHTML=`<h1>Think you'd spot it?</h1><p class="mute">A message just arrived. Tap what you would <i>really</i> do. Nothing here is real, so nothing can go wrong.</p>${s.html}<div id="res"></div>`;wire()}
+function play(id){const s=id&&by(id);if(!s){app.innerHTML=`<h1>Practice</h1><p class="mute">Pick a situation. Switch on <b>Inspect clues</b> to find the warning signs, then switch it off and take action.</p><div class="grid">${S.map(s=>`<a class="sc" style="--c:${s.c}" href="#/play/${s.id}"><span class="ic">${s.ic}</span><b>${s.name}</b><small>${s.tag}</small></a>`).join("")}</div>`;return}
+ctx={s,mode:"play",inspect:false,found:new Set()};
+app.innerHTML=`<span class="chip" style="--c:${s.c}">${s.ic} ${s.name}</span><h1>Practice mode</h1><p class="mute">Use the switch to hunt for warning signs. Turn it off to act.</p><button class="btn" id="insp" aria-pressed="false">🔍 Inspect clues: OFF</button> <span id="cnt" class="mute" style="font-size:.8rem">Clues found: 0 of ${Object.keys(s.flags).length}</span><div class="why" id="why" aria-live="polite">Tap <b>Inspect clues</b>, then tap anything that looks suspicious.</div><div id="stage">${s.html}</div><div id="res"></div>`;wire();
+$("#insp").onclick=e=>{ctx.inspect=!ctx.inspect;e.target.textContent="🔍 Inspect clues: "+(ctx.inspect?"ON":"OFF");e.target.setAttribute("aria-pressed",ctx.inspect);$("#stage").classList.toggle("insp",ctx.inspect);$("#why").innerHTML=ctx.inspect?"Dashed items hide clues. Tap them.":"Now act as you would in real life."}}
+function learn(id){const s=id&&by(id);if(!s){app.innerHTML=`<h1>Learn</h1><p class="mute">Deep dives on how each scam works, the traps to watch for, and what to do if you slip.</p><div class="grid">${S.map(s=>`<a class="sc" style="--c:${s.c}" href="#/learn/${s.id}"><span class="ic">${s.ic}</span><b>${s.name}</b><small>${s.tag}</small></a>`).join("")}</div>`;return}
+app.innerHTML=`<span class="chip" style="--c:${s.c}">${s.ic} Guide</span><h1>${s.name}</h1><h2>How it works</h2><p>${s.how}</p><h2>Common traps</h2><div class="grid">${s.traps.map(t=>`<div class="tip" style="display:block"><h3>${t[0]}</h3>${t[1]}</div>`).join("")}</div><h2>What the real thing looks like</h2><p class="real">${s.real}</p>${tipsHTML(s)}<h2>Already clicked or paid?</h2><p class="mute">Don't be embarrassed. It happens to smart people every day. Act quickly:</p><ol class="steps">${s.after.map(a=>`<li>${a}</li>`).join("")}</ol><p style="margin-top:24px"><a class="btn p" href="#/play/${s.id}">Practice this scam</a><a class="btn" href="#/learn">All guides</a></p><p class="fine">Report scams: ReportFraud.ftc.gov · FBI IC3: ic3.gov · AARP Fraud Watch Helpline: 877-908-3360. Check these sites for the latest figures and advice.</p>`}
+cur=rnd();route();
+</script></body></html>
