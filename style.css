@@ -6,10 +6,10 @@
    ===================================================================== */
 
 :root {
-  --bg: #f6f8fc;
-  --card: #fff;
-  --ink: #0f1b33;
-  --mute: #4a5873;
+  --bg: #eeead7; /* beige */
+  --card: #757d6f; /* sage */
+  --ink: #2d0000; /* marroon */
+  --mute: #6d0808; /* bright red */
   --pri: #2447f5;
   --on: #fff;
   --sun: #ffd23f;
