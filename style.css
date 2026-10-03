@@ -23,40 +23,6 @@
   padding-bottom: env(safe-area-inset-bottom,0px);
 }
 
-
-/* ===== DARK MODE COLORS  (used automatically if the person's device is in dark mode) ===== */
-
-@media (prefers-color-scheme:dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0b1327;
-    --card: #16213b;
-    --ink: #f1f5ff;
-    --mute: #b3c0da;
-    --pri: #8ea5ff;
-    --on: #0b1327;
-    --bad: #ff9a90;
-    --badbg: #3a1a1c;
-    --good: #7be3ab;
-    --goodbg: #12352a;
-    --hi: #4b4210;
-  }
-
-}
-
-:root[data-theme="dark"] {
-  --bg: #0b1327;
-  --card: #16213b;
-  --ink: #f1f5ff;
-  --mute: #b3c0da;
-  --pri: #8ea5ff;
-  --on: #0b1327;
-  --bad: #ff9a90;
-  --badbg: #3a1a1c;
-  --good: #7be3ab;
-  --goodbg: #12352a;
-  --hi: #4b4210;
-}
-
 html {
   scroll-padding-top: env(safe-area-inset-top,0px);
   scroll-behavior: smooth;
