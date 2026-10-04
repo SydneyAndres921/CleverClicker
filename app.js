@@ -1,5 +1,5 @@
 /* =====================================================================
-   SCAM SHIELD - APP LOGIC
+   CLEVER CLICKER - APP LOGIC
    (the scenario content lives in js/scenarios/, loaded before this file)
 
    SECTIONS (search for the number)
