@@ -74,8 +74,8 @@ header {
   z-index: 5;
   background: var(--mute);
   border-bottom: 3px solid var(--ink);
-  padding: 24px 18px;
-  padding-top: calc(24px + env(safe-area-inset-top,0px));
+  padding: 48px 18px;
+  padding-top: calc(48px + env(safe-area-inset-top,0px));
 }
 
 .hin {
