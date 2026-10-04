@@ -441,6 +441,7 @@ ol.steps li {
   margin-top: 40px;
   border-top: 2px solid var(--card); 
   padding-top: 14px;
+}
 
 /* ===== SMALL SCREENS (phones) ===== */
 @media (max-width: 600px) {
