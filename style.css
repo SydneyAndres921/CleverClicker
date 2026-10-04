@@ -23,10 +23,10 @@
   padding-bottom: env(safe-area-inset-bottom,0px);
 }
 
-html {
-  scroll-padding-top: env(safe-area-inset-top,0px);
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-padding-top: 170px;
+    scroll-behavior: smooth;
+  }
 
 * {
   box-sizing: border-box;
