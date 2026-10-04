@@ -176,7 +176,7 @@ function showTest() {
   const s = currentScenario;
   game = { s, mode: "test", found: new Set() };
   app.innerHTML = `
-    <h1>Think you'd spot it?</h1>
+    <h1>Think you can spot it?</h1>
     <p class="mute">A message just arrived. Check it out!</p>
     ${s.html}
     <div id="res"></div>`;
