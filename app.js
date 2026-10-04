@@ -177,7 +177,7 @@ function showTest() {
   game = { s, mode: "test", found: new Set() };
   app.innerHTML = `
     <h1>Think you'd spot it?</h1>
-    <p class="mute">A message just arrived. Tap what you would <i>really</i> do. Nothing here is real, so nothing can go wrong.</p>
+    <p class="mute">A message just arrived. Check it out!</p>
     ${s.html}
     <div id="res"></div>`;
   makeKeyboardFriendly();
