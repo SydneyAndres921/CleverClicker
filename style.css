@@ -112,8 +112,8 @@ nav a {
 }
 
 nav a.on {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--bg);
+  color: var(--ink);
 }
 
 main {
@@ -433,4 +433,16 @@ ol.steps li {
   margin-top: 40px;
   border-top: 2px solid var(--line,#8884);
   padding-top: 14px;
+
+/* ===== SMALL SCREENS (phones) ===== */
+@media (max-width: 600px) {
+   header {
+      padding: 20px 18px;
+      padding-top: calc(20px + env(safe-area-inset-top,0px));
+   }
+   html {
+      scroll-padding-top: 150px;
+   }
+ }
+   
 }
