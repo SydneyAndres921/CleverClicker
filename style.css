@@ -10,14 +10,6 @@
   --card: #c9d1c3; /* pale sage */
   --ink: #2d0000; /* marroon */
   --mute: #6d0808; /* bright red */
-  --pri: #2447f5;
-  --on: #fff;
-  --sun: #ffd23f;
-  --bad: #c4271c;
-  --badbg: #ffe9e6;
-  --good: #0f7a50;
-  --goodbg: #dff6ea;
-  --hi: #fff1b8;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top,0px);
   padding-bottom: env(safe-area-inset-bottom,0px);
@@ -66,6 +58,10 @@ p {
 
 .mute {
   color: var(--mute);
+}
+
+.dev .mute { 
+   color: var(--ink); 
 }
 
 header {
@@ -123,8 +119,13 @@ main {
 }
 
 :focus-visible {
-  outline: 4px solid var(--pri);
+  outline: 4px solid var(--mute);
   outline-offset: 3px;
+}
+.bar :focus-visible,
+.pop :focus-visible,
+.call :focus-visible {
+  outline-color: var(--bg);
 }
 
 
@@ -149,8 +150,8 @@ main {
 }
 
 .btn.p {
-  background: var(--pri);
-  color: var(--on);
+  background: var(--mute); 
+  color: var(--bg);        
 }
 
 .btn:active,
@@ -163,7 +164,7 @@ main {
   background: var(--card);
   border: 3px solid var(--ink);
   border-radius: 22px;
-  box-shadow: 8px 8px 0 var(--c,var(--pri));
+  box-shadow: 8px 8px 0 var(--c,var(--ink)); 
   max-width: 620px;
   overflow: hidden;
   margin: 18px 0 22px;
@@ -189,8 +190,8 @@ main {
 }
 
 .bar b {
-  background: var(--sun);
-  color: #0f1b33;
+  background: var(--bg);   
+  color: var(--ink);       
   border-radius: 99px;
   padding: 0 10px;
   margin-left: auto;
@@ -214,8 +215,8 @@ main {
 .lnk {
   font: inherit;
   font-weight: 700;
-  background: #1a73e8;
-  color: #fff;
+  background: var(--ink);
+  color: var(--bg);
   border-radius: 10px;
   padding: 12px 20px;
   display: inline-block;
@@ -232,20 +233,20 @@ main {
 }
 
 .sms {
-  background: #e3e8f4;
-  color: #0f1b33;
+  background: var(--bg); 
+  color: var(--ink);
   border-radius: 18px 18px 18px 4px;
   padding: 14px 16px;
 }
 
 .sms u {
-  color: #1a55c8;
+  color: var(--mute); 
   font-weight: 600;
 }
 
 .pop {
-  background: #b3141c;
-  color: #fff;
+  background: var(--mute); 
+  color: var(--bg);
   padding: 20px;
   position: relative;
   text-align: center;
@@ -256,7 +257,8 @@ main {
   top: 8px;
   right: 12px;
   font-weight: 800;
-  background: #fff3;
+  background: var(--bg);
+  color: var(--ink);
   border-radius: 6px;
   padding: 0 10px;
 }
@@ -267,15 +269,15 @@ main {
 }
 
 .pop .tools button {
-  background: #ffd23f;
-  color: #111;
-  border-color: #111;
-  box-shadow: 3px 3px 0 #111;
+  background: var(--bg);  
+  color: var(--ink);       
+  border-color: var(--ink); 
+  box-shadow: 3px 3px 0 var(--ink); 
 }
 
 .call {
-  background: linear-gradient(#1b2745,#101a31);
-  color: #fff;
+  background: var(--ink);
+  color: var(--bg);  
   padding: 20px;
 }
 
@@ -284,19 +286,23 @@ main {
 }
 
 .call button {
-  background: #fff;
-  color: #111;
+  background: var(--bg);   
+  color: var(--ink); 
 }
 
 .hit {
-  background: var(--hi);
-  outline: 3px solid var(--sun);
+  background: var(--bg);        
+  color: var(--ink);               
+  outline: 3px solid var(--mute);  
   border-radius: 6px;
 }
 
 .insp [data-f] {
-  outline: 2px dashed var(--pri);
+  outline: 2px dashed var(--bg);   
   outline-offset: 2px;
+}
+.sms [data-f] {
+  outline-color: var(--ink);  
 }
 
 
@@ -312,25 +318,27 @@ main {
 }
 
 .why {
-  border-color: var(--pri);
+  border-color: var(--mute); 
   min-height: 3.4em;
 }
 
 .fb.bad {
-  background: var(--badbg);
-  border-color: var(--bad);
+  background: var(--mute);    
+  color: var(--bg);          
+  border-color: var(--ink);
 }
 
 .fb.good {
-  background: var(--goodbg);
-  border-color: var(--good);
+  background: var(--bg);     
+  color: var(--ink);         
+  border-color: var(--ink);
 }
 
 .scroll {
   display: block;
   font: inherit;
   font-weight: 800;
-  color: var(--bad);
+  color: var(--mute); 
   background: none;
   border: 0;
   margin: 26px auto;
@@ -378,7 +386,7 @@ main {
 
 .sc small {
   display: block;
-  color: var(--mute);
+  color: var(--ink);
   font-size: .75rem;
   line-height: 1.4;
 }
@@ -390,7 +398,7 @@ main {
 .chip {
   display: inline-block;
   background: var(--c);
-  color: #fff;
+  color: var(--bg);
   border-radius: 99px;
   padding: 2px 16px;
   font-size: .8rem;
@@ -409,12 +417,12 @@ main {
 }
 
 .tip b {
-   color: #0a5c3b;
+   color: var(--ink);
 }
 
 .real {
-  background: var(--goodbg);
-  border: 3px solid var(--good);
+  background: var(--bg);         
+  border: 3px solid var(--ink);  
   border-radius: 18px;
   padding: 16px 20px;
 }
@@ -431,7 +439,7 @@ ol.steps li {
   font-size: .75rem;
   color: var(--mute);
   margin-top: 40px;
-  border-top: 2px solid var(--line,#8884);
+  border-top: 2px solid var(--card); 
   padding-top: 14px;
 
 /* ===== SMALL SCREENS (phones) ===== */
